@@ -1,0 +1,28 @@
+{
+  "dataset_name": "Inventory Data",
+
+  "required_columns": [
+    "Item Name",
+    "Price",
+    "Quantity",
+    "Min Quantity",
+    "Max Quantity"
+  ],
+
+  "numeric_ranges": {
+    "Price": { "min": 0 },
+    "Quantity": { "min": 0 },
+    "Min Quantity": { "min": 0 },
+    "Max Quantity": { "min": 0 }
+  },
+
+  "logical_rules": [
+    {
+      "type": "range_consistency",
+      "min_field": "Min Quantity",
+      "value_field": "Quantity",
+      "max_field": "Max Quantity",
+      "description": "Quantity must be between minimum and maximum allowed values"
+    }
+  ]
+}

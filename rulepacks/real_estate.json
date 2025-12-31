@@ -1,0 +1,28 @@
+{
+  "dataset_name": "Real Estate Listings",
+
+  "required_columns": [
+    "Sale Price",
+    "Beds",
+    "Bath",
+    "Sq Ft",
+    "Year Built"
+  ],
+
+  "numeric_ranges": {
+    "Sale Price": { "min": 0 },
+    "Beds": { "min": 0, "max": 10 },
+    "Bath": { "min": 0, "max": 10 },
+    "Sq Ft": { "min": 100 },
+    "Year Built": { "min": 1850, "max": 2025 }
+  },
+
+  "logical_rules": [
+    {
+      "type": "greater_or_equal",
+      "left": "Lot Size",
+      "right": "Sq Ft",
+      "description": "Lot size must be greater than or equal to square footage"
+    }
+  ]
+}
